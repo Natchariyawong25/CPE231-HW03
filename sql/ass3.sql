@@ -11,7 +11,11 @@ UPDATE "PROJECT" SET "Plocation"='Bellaire' , "Dnum"= 5 WHERE "Pnumber" = 10 ;
 -- Check data in TABLE
 SELECT * FROM "PROJECT" p ;
 
-/* ข้อ c : ยังไม่เสร็จ*/
+/* ข้อ c */
+DELETE FROM "DEPARTMENT" d
+WHERE d."Mgr_ssn" IN (SELECT e."Super_ssn" FROM "EMPLOYEE" e
+		      WHERE e."Lname" = 'Smith');
+/* cannot delete because it don't have column data name 'Smith' */
 
 -- Check data in TABLE
 SELECT * FROM "EMPLOYEE" e ;
