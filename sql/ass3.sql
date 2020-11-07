@@ -12,8 +12,6 @@ UPDATE "PROJECT" SET "Plocation"='Bellaire' , "Dnum"= 5 WHERE "Pnumber" = 10 ;
 SELECT * FROM "PROJECT" p ;
 
 /* ข้อ c : ยังไม่เสร็จ*/
-DELETE FROM "EMPLOYEE" e
-WHERE e."Lname" ='Smith';
 
 -- Check data in TABLE
 SELECT * FROM "EMPLOYEE" e ;

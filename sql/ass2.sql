@@ -18,7 +18,7 @@ JOIN "DEPENDENT" d ON e."Fname" = d."Dependent_name";
 SELECT e."Fname" || '  ' || e."Lname" as "Full_Name" 
 FROM "EMPLOYEE" e 
 WHERE EXISTS (SELECT d."Essn" FROM "DEPENDENT" d 
-			  WHERE e."Fname" = d."Dependent_name");
+	              WHERE e."Fname" = d."Dependent_name");
 
 -- Check data in TABLE
 SELECT * FROM "EMPLOYEE" e ;
