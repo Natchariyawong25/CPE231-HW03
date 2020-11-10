@@ -14,8 +14,10 @@ SELECT * FROM "PROJECT" p ;
 /* ข้อ c */
 DELETE FROM "DEPARTMENT" d
 WHERE d."Mgr_ssn" IN (SELECT e."Super_ssn" FROM "EMPLOYEE" e
-		      WHERE e."Lname" = 'Smith');
-/* cannot delete because it don't have column data name 'Smith' */
+		        WHERE e."Lname" = 'Smith');
+/* ERROR:  update or delete on table "DEPARTMENT" violates foreign key constraint "DEPT_LOCATION_Dnumber_fkey" on table "DEPT_LOCATION"
+DETAIL:  Key (Dnumber)=(5) is still referenced from table "DEPT_LOCATION". */
+
 
 -- Check data in TABLE
 SELECT * FROM "EMPLOYEE" e ;
